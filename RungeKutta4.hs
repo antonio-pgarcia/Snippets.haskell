@@ -6,7 +6,7 @@ import Debug.Trace
 -- | ODE, y = e ^ x
 mydydx1 :: Double -> Double -> Double
 mydydx1 x y = do
-    y
+    exp(x)
 
 -- | ODE, y = e ^ x
 mydydx2 :: Double -> Double -> Double
