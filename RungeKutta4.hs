@@ -13,6 +13,12 @@ mydydx2 :: Double -> Double -> Double
 mydydx2 x y = do
     x * exp (3 * x) - 2 * y
 
+-- | ODE, y = r * y
+mydydx3 :: Double -> Double -> Double
+mydydx3 x y = do
+    let r = 0.5
+    r * y
+
 -- | Fourth order runge-kutta algorithm calculations
 rungekutta4' :: Double -> Double -> Double -> (Double -> Double -> Double) -> Double
 rungekutta4' x y h f = do
@@ -38,4 +44,6 @@ main = do
     let v = rungekutta4 0 1 0.01 1.0 mydydx1 [] []
     putStrLn . show $ snd v !! ((length $ snd v) - 1)
     let v = rungekutta4 0 0 0.01 1.0 mydydx2 [] []
+    putStrLn . show $ snd v !! ((length $ snd v) - 1)
+    let v = rungekutta4 0 2 0.01 3 mydydx3 [] []
     putStrLn . show $ snd v !! ((length $ snd v) - 1)
