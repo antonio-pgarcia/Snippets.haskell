@@ -19,7 +19,6 @@ myrandom :: Int -> Int -> Int -> Int
 myrandom a b s = do
     fst $ randomR (a,b) (mkStdGen s)
 
-
 -- | Shuffle a list
 shuffle :: [a] -> [a]
 shuffle [] = []
@@ -35,7 +34,6 @@ shuffle' r l1 l2 = do
     if (len == 0)
         then l2
         else shuffle' (myrandom 0 (len-1) r) (snd $ t) (l2 ++ (fst $ t))
-
 
 -- | The main entry point.
 main :: IO ()
