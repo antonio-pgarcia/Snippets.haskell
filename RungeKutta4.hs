@@ -8,7 +8,7 @@ mydydx1 :: Double -> Double -> Double
 mydydx1 x y = do
     exp(x)
 
--- | ODE, y = e ^ x
+-- | ODE, y = x * e ^ (3 * x) - 2 * y
 mydydx2 :: Double -> Double -> Double
 mydydx2 x y = do
     x * exp (3 * x) - 2 * y
